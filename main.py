@@ -26,7 +26,7 @@ def create_log():
     fh.setFormatter(f)
     log.addHandler(h)
     log.addHandler(fh)
-    #log.setLevel(logging.DEBUG)
+    log.setLevel(logging.DEBUG)
 
 
 def ask_question(question: str, answers: list):
@@ -232,7 +232,6 @@ def main():
     log.info("Started.")
 
     original_disks = get_disks()
-    original_disks.remove(Path('/dev/sdc'))
     log.info("Starting with disks: {}".format(list(map(lambda x:x.name, original_disks))))
 
     while True:
